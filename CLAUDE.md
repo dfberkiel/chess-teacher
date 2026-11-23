@@ -33,7 +33,7 @@ Planning docs live in the claude.ai Project "Dans Chess Teacher" (build-plan-v1.
 - At the end of a session, update "Current status" below.
 
 ## Current status (update at the end of each session; keep it to ~5 lines)
-- Phase 0 (board + Stockfish + PWA install on iPhone): built and tested in desktop Chromium (iPhone viewport, offline reload OK). Waiting for Dan to test on his iPhone.
+- Phase 0 (board + Stockfish + PWA install on iPhone): DONE. Live on GitHub Pages and confirmed working by Dan.
 - Engine: Stockfish 19 lite single-thread (~1.8 MB wasm), copied from npm `stockfish` into public/engine/ by scripts/copy-engine.mjs (not in git).
 - Deploy: push to main → .github/workflows/deploy.yml → https://dfberkiel.github.io/chess-teacher/ (base path /chess-teacher/).
-- Next after Phase 0: Vienna Game pilot course (data format + drill screen).
+- Next: Vienna Game pilot course (data format + drill screen). Opponent moves are auto-played from the course file, not by Stockfish.
