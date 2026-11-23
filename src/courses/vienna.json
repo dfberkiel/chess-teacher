@@ -1,0 +1,166 @@
+{
+  "id": "vienna",
+  "name": "Vienna Gambit",
+  "side": "white",
+  "scope": "1.e4 e5 2.Nc3 (this pilot covers 2...Nf6 3.f4; 2...Nc6 and 2...Bc5 come later as branches)",
+  "freqSource": "estimate",
+  "overview": {
+    "idea": "Put the knight on c3 first to guard e4, then push f2-f4 to attack Black's e5 pawn. It's like a King's Gambit, but with your center already protected. If Black takes on f4, your e-pawn kicks the f6 knight with e4-e5. If Black hits back with ...d5, you take on e5 and that pawn cramps Black's whole kingside.",
+    "structure": "In the main line you end up with pawns on d4 and e5 (later the e5 pawn often trades off), the f-file half-open for your rook, and a Black knight sitting on e4. That knight looks strong but has few safe squares to go back to.",
+    "plans": [
+      "Grab space: f4 then fxe5, so your pawn on e5 takes the f6 square away from Black's knight.",
+      "Build the center with Nf3 and d4, so e5 is solidly protected.",
+      "Pressure the knight on e4: Bd3 attacks it, and trading it off leaves Black's pieces short of good squares.",
+      "Castle kingside and use the open f-file: your rook on f1 points straight at f7 and Black's king."
+    ],
+    "concepts": [
+      {
+        "id": "e5-spearhead",
+        "title": "The e5 pawn is your spearhead",
+        "text": "Once your pawn lands on e5 it controls d6 and f6. Black's knight can't come back to f6, and Black's kingside pieces get cramped. Protect it with Nf3 and d4 rather than letting Black trade it off cheaply."
+      },
+      {
+        "id": "knight-on-e4",
+        "title": "Kick or trade the knight on e4",
+        "text": "Black's knight on e4 looks great, but its retreat squares are poor because your e5 pawn covers f6. Develop with tempo against it (Bd3), and trade it when that leaves Black's position loose."
+      },
+      {
+        "id": "f-file",
+        "title": "The open f-file",
+        "text": "Your f-pawn has left, so after you castle, your rook on f1 sees down the f-file toward f7. When the f-file opens fully, every Black piece on it is a target."
+      },
+      {
+        "id": "develop-first",
+        "title": "Develop before attacking",
+        "text": "The f4 push weakens your own king a little (watch the e1-h4 diagonal for ...Qh4+). Get Nf3 out early: it covers h4 and protects e5. Castle before starting anything wild."
+      }
+    ],
+    "traps": [
+      {
+        "title": "The knight on the edge",
+        "moves": ["e4", "e5", "Nc3", "Nf6", "f4", "exf4", "e5", "Nh5", "Qxh5"],
+        "text": "After e4-e5 kicks the knight, a natural-looking ...Nh5 just drops it: your queen goes d1 to h5 along the open diagonal. The same thing happens after ...Ng4 (Qxg4). Always check that diagonal when the f6 knight moves."
+      },
+      {
+        "title": "Greedy knight grab vs ...Bc5",
+        "moves": ["e4", "e5", "Nc3", "Nf6", "f4", "Bc5", "fxe5", "Nxe4", "Nxe4"],
+        "text": "If Black develops the bishop to c5 and then grabs your e4 pawn with the knight, just take the knight. Black's ...Bxg1 and ...Qh4+ ideas don't win the piece back, and you stay a piece up."
+      }
+    ]
+  },
+  "tree": [
+    {
+      "move": "e4",
+      "tags": ["spine"],
+      "next": [
+        {
+          "move": "e5",
+          "tags": ["spine"],
+          "next": [
+            {
+              "move": "Nc3",
+              "tags": ["spine"],
+              "why": "Develop the knight and guard e4, but keep your f-pawn free. Next you want f2-f4 to attack e5: that's the whole point of the Vienna.",
+              "next": [
+                {
+                  "move": "Nf6",
+                  "tags": ["spine"],
+                  "why": "Black's most popular reply: it develops and eyes your e4 pawn.",
+                  "next": [
+                    {
+                      "move": "f4",
+                      "tags": ["spine", "concept:e5-spearhead"],
+                      "why": "The Vienna Gambit. Attack e5 right away. If Black takes (...exf4), e4-e5 kicks the f6 knight. If Black ignores it, fxe5 gains space.",
+                      "next": [
+                        {
+                          "move": "d5",
+                          "tags": ["spine"],
+                          "why": "Black's best answer: hit back in the center instead of grabbing the pawn.",
+                          "next": [
+                            {
+                              "move": "fxe5",
+                              "tags": ["spine", "concept:e5-spearhead"],
+                              "why": "Capture on e5. Your new pawn there takes the f6 square away from Black's pieces and cramps the kingside.",
+                              "next": [
+                                {
+                                  "move": "Nxe4",
+                                  "tags": ["spine", "concept:knight-on-e4"],
+                                  "why": "Black's knight jumps into the center. Much of your plan from here is about kicking or trading this knight.",
+                                  "next": [
+                                    {
+                                      "move": "Nf3",
+                                      "tags": ["spine", "concept:develop-first"],
+                                      "why": "Develop and protect e5. The knight also covers h4, which shuts down ...Qh4+ checks against your king.",
+                                      "next": [
+                                        {
+                                          "move": "Be7",
+                                          "tags": ["spine"],
+                                          "why": "Black gets ready to castle.",
+                                          "next": [
+                                            {
+                                              "move": "d4",
+                                              "tags": ["spine", "concept:e5-spearhead"],
+                                              "why": "Build the big center: d4 supports e5 and opens the diagonal for your c1 bishop.",
+                                              "next": [
+                                                {
+                                                  "move": "O-O",
+                                                  "tags": ["spine"],
+                                                  "next": [
+                                                    {
+                                                      "move": "Bd3",
+                                                      "tags": ["spine", "concept:knight-on-e4"],
+                                                      "why": "Develop with pressure. The bishop attacks the knight on e4, and if that knight ever leaves, the bishop looks straight at h7 next to Black's king.",
+                                                      "next": [
+                                                        {
+                                                          "move": "f5",
+                                                          "tags": ["spine"],
+                                                          "why": "Black props up the e4 knight with a pawn.",
+                                                          "next": [
+                                                            {
+                                                              "move": "exf6",
+                                                              "tags": ["spine", "concept:f-file"],
+                                                              "why": "Capture en passant: your e5 pawn takes the f-pawn as it passes, as if it had moved only one square. This removes the knight's support and opens the f-file.",
+                                                              "next": [
+                                                                {
+                                                                  "move": "Bxf6",
+                                                                  "tags": ["spine"],
+                                                                  "next": [
+                                                                    {
+                                                                      "move": "O-O",
+                                                                      "tags": ["spine", "concept:f-file"],
+                                                                      "why": "Castle. Your king is safe, and your rook arrives on the open f-file facing Black's bishop on f6. The fight now is about the e4 knight and the f-file."
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
