@@ -1,0 +1,71 @@
+:root {
+  --bg: #262421;
+  --panel: #302e2b;
+  --text: #e8e6e3;
+  --muted: #9b9895;
+  --accent: #6a9f3a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.4 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior: none;
+}
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: calc(env(safe-area-inset-top) + 8px) 8px calc(env(safe-area-inset-bottom) + 8px);
+}
+.board-row { display: flex; gap: 6px; }
+.board-wrap { flex: 1; min-width: 0; }
+.board { width: 100%; aspect-ratio: 1; touch-action: none; }
+/* Coordinates: put file letters in the bottom-right and rank numbers in the top-left of each edge square */
+.cg-wrap coords { font-size: 10px; font-weight: 600; }
+.cg-wrap coords.files { left: 0; bottom: 0; height: auto; text-transform: none; }
+.cg-wrap coords.files coord { flex: 1 1 0; text-align: right; padding-right: 2px; }
+.cg-wrap coords.ranks { left: 2px; top: 0; }
+.cg-wrap coords.ranks coord { flex: 1 1 0; transform: none; }
+
+.evalbar {
+  position: relative;
+  width: 18px;
+  background: #403d39;
+  border-radius: 3px;
+  overflow: hidden;
+  flex: none;
+}
+.evalbar-white {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: #f0f0f0;
+  transition: height 0.3s ease;
+}
+.evalbar-label {
+  position: absolute; left: 0; right: 0;
+  font-size: 9px; font-weight: 700; text-align: center;
+}
+.evalbar-label.bottom { bottom: 2px; color: #333; }
+.evalbar-label.top { top: 2px; color: #eee; }
+
+.controls { display: flex; gap: 8px; align-items: center; margin: 10px 0; }
+.controls button, .controls select {
+  font: inherit;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+.controls button:disabled { opacity: 0.4; }
+.controls label { margin-left: auto; color: var(--muted); }
+
+.lines { background: var(--panel); border-radius: 8px; padding: 8px 10px; }
+.lines-head { color: var(--muted); font-size: 13px; margin-bottom: 4px; }
+.line { display: flex; gap: 10px; padding: 4px 0; font-size: 14px; min-height: 28px; }
+.line + .line { border-top: 1px solid #3c3a37; }
+.score { flex: none; width: 48px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.pv { color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.status { font-weight: 700; padding: 6px 0; }
