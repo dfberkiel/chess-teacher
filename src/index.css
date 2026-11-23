@@ -69,3 +69,28 @@ html, body {
 .score { flex: none; width: 48px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .pv { color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .status { font-weight: 700; padding: 6px 0; }
+
+/* Pages: home, course overview, drill */
+.page h1 { font-size: 24px; margin: 8px 0 4px; }
+.page h2 { font-size: 17px; margin: 18px 0 6px; }
+.page p, .page li { color: var(--text); }
+.page ul { padding-left: 20px; }
+.page li { margin-bottom: 6px; }
+.muted { color: var(--muted); font-size: 14px; }
+button.big {
+  font: inherit; font-weight: 600; color: var(--text);
+  background: var(--panel); border: 1px solid #444; border-radius: 12px;
+  padding: 14px 16px; text-align: left; display: flex; flex-direction: column; gap: 2px;
+}
+button.big small { font-weight: 400; color: var(--muted); font-size: 13px; }
+button.big.wide { width: 100%; margin-top: 12px; }
+.start-row { display: flex; gap: 10px; margin: 14px 0; }
+.start-row button.big { flex: 1; border-color: var(--accent); }
+.mode-tag { margin-left: auto; color: var(--muted); font-size: 14px; }
+.panel { background: var(--panel); border-radius: 8px; padding: 10px 12px; }
+.prompt { font-weight: 600; min-height: 22px; }
+.note { margin-top: 10px; padding-top: 10px; border-top: 1px solid #3c3a37; font-size: 15px; }
+.page .note { background: var(--panel); border: none; border-radius: 8px; padding: 10px 12px; margin-top: 8px; }
+.note-move { font-weight: 700; margin-bottom: 2px; }
+.concept { margin-top: 6px; color: var(--accent); font-size: 14px; font-weight: 600; }
+.done .controls { margin-bottom: 0; }
